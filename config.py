@@ -1,8 +1,8 @@
 # Using Amazon RDS as Storage
 
-class RDSConfig:
-    ENDPOINT = "ENDPOINT"
-    USERNAME = "admin"
-    PASSWORD = "admin123"
-    DATABASE_NAME = "cloud_storage"
+class DBConfig:
+    HOST = "127.0.0.1"
+    USER = "root"
+    PASSWORD = "root"
+    DATABASE_NAME = "readup"
     PORT = 3306

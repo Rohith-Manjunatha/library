@@ -2,31 +2,21 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for, s
 import mysql.connector
 import math
 import secrets
-import pymysql
-# from .config import RDSConfig
+from .config import DBConfig
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
 
-# db_config = {
-#     'user': RDSConfig.USERNAME,
-#     'password': RDSConfig.PASSWORD,
-#     'host': RDSConfig.ENDPOINT,
-#     'port': RDSConfig.PORT,
-#     'database': RDSConfig.DATABASE_NAME
-# }
-
 db_config = {
-    'user': 'root',
-    'password': 'root',
-    'host': '127.0.0.1',
-    'port': 3306,
-    'database': 'library',
+    'user': DBConfig.USER,
+    'password': DBConfig.PASSWORD,
+    'host': DBConfig.HOST,
+    'port': DBConfig.PORT,
+    'database': DBConfig.DATABASE_NAME,
     'raise_on_warnings': True
 }
 
 conn = mysql.connector.connect(**db_config)
-# conn = pymysql.connect(**db_config)
 cursor = conn.cursor(dictionary=True)
 
 @app.route('/')
