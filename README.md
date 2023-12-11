@@ -23,7 +23,7 @@ This is a simple Library Management System implemented using Flask and MySQL.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/library-management.git
+   git clone https://github.com/Rohith-Manjunatha/readup.git
    ```
 2. Install dependencies:
 
